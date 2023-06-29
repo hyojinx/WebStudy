@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>
+</head>
+<body>
+    <h1>숫자의 합</h1>
+    <script>
+        //1~100까지의 합
+        let fnum=100;
+        let sum =0;
+        for(let i=1;i<=100;i++){
+            sum+=i;
+        }
+        document.write("총합:"+sum+"<br>");
+        //1~100 홀수의 총합
+        let oddsum=0;
+        for(let i=1;i<=100;i++){
+            if(i%2==1){
+                oddsum+=i;
+            }
+        }
+        document.write("홀수의총합:"+oddsum+"<br>");
+        //1~100짝수의 총합
+        let evensum=0;
+        for(let i=1;i<=100;i++){
+            if(i%2==0){
+                evensum+=i;
+            }
+        }
+        document.write("짝수의총합:"+evensum+"<br>");
+        //1~100 2의 배수와 3의 배수들만의 총합
+        let somesum=0;
+        for(let i=1;i<=100;i++){
+            if(i%2==0||i%3==00){
+                somesum+=i;
+            }
+        }
+        document.write("2의 배수와 3의 배수들의 총합:"+somesum+"<br>");
+        //합계가 125를 넘는 순간의 숫자와 총합
+        let limitNum=0;
+        let limetSum=0;
+        for(let i =1;i<=fnum;i++){
+            limetSum+=i;
+            if(limetSum>=125){
+                limitNum=i-1;
+                break;
+            }
+        }
+        document.write("마지막 숫자"+limitNum+"<br>");
+        document.write("합계:"+limetSum);
+      
+    </script>
+</body>
+</html>

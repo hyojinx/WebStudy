@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 클래스 선택지</title>
+    <style>
+        a:link{color: orange;}
+        a:visited{color: gray;}
+        a:hover{color: blue;font-weight: bold;}
+        a:active{color: red;}
+        div{background-color: pink;width: 300px;padding: 20px;text-align: center;}
+        div:hover{background-color: blue;color: white;}
+        #focus input{
+            border: 3px solid black;
+            width: 300px;padding: 10px;outline: none;
+            transition: 0.5s;
+        }
+        #focus input:focus{border: 4px solid orange;}
+        form[name="checked"] input{color: wheat;}
+        form[name="checked"] span{color: wheat;}
+        form[name="checked"] input+span{color: blue;}
+        form[name="checked"] input:enabled+span{color: aquamarine;}
+        form[name="checked"] input:disabled+span{color: yellow;}
+        form[name="checked"] input:checked+span{color: red;}
+    </style>
+</head>
+<body>
+    <h3>링크 선택자를 이용한 선택</h3>
+    <p><a href="#">이동</a></p>
+    <div>링크 선택자를 이용한 버튼</div>
+    <br>
+    <h3>input 요소 선택</h3>
+    <form id = "focus">
+        아래 입력 양식 클립<br>
+        <input type="text" value="선택">
+    </form>
+    <br>
+    <form name="checked">
+        <input type="radio" value="html" name="lecture" checked>
+        <span>HTML</span><br>
+        <input type="radio" value="css" name="lecture">
+        <span>CSS</span><br>
+        <input type="radio" value="java" name="lecture" disabled>
+        <span>Java</span><br>
+        <hr>
+        <input type="checkbox" value="html" name="lecture" checked>
+        <span>HTML</span><br>
+        <input type="checkbox" value="css" name="lecture" disabled>
+    </form>
+</body>
+</html>

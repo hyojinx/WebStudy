@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        const fruits=['banana','orange','apple','strawberry'];
+        let f = fruits.entries();
+        console.log(f);
+        for(let item of f){
+            console.log(item);
+        }
+        let key = fruits.keys();
+        for(let item of key){
+            console.log(item);
+        }
+        let val = fruits.values();
+        console.log(val);
+        for(let item of val){
+            console.log(item);
+        }
+    </script>
+</body>
+</html>

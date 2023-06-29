@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문ㄴ</title>
+</head>
+<body>
+    <h1>if</h1>
+    <script>
+        let num1=2;//parseInt(prompt("첫번째 숫자를 입력"));
+        let num2=3;
+        document.write(num1 + ","+num2+"<br>");
+        if(num1==num2)      {document.write(num1+"은" +num2+"와 같습니다.");}
+        else if(num1>num2)  {document.write(num1+"은" +num2+"보다 큽니다.");}
+        else                {document.write(num1+"은" +num2+"보다 작습니다.");}
+    </script>
+
+    <h1>switch</h1>
+    <script>
+        let x=10;
+        switch(typeof x)
+        {
+            case "number": document.write("type: number :" + x);    break; 
+            case "string": document.write("type: string :" + x);    break; 
+            case "object": document.write("type: object :" + x);    break; 
+            default:       document.write("no type :"+x);           break;
+        }
+        document.write("<br>");
+        let day = new Date().getDate();
+        console.log(day);
+        switch(day)
+        {
+            //월
+            case 1:
+            //화
+            case 2:
+            //수
+            case 3:
+            //목
+            case 4:
+            default: document.write("주말이 아닙니다.  수고"); break;
+            //금
+            case 5: document.write("불타는 승훈이의 똥"); break;
+            //토
+            case 6:
+            //일
+            case 0: document.write("즐거운 주말"); break;
+        }       
+
+                
+        
+
+    </script>
+
+</body>
+</html>

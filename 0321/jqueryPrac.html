@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="../0320/js/jquery-3.6.4.js"></script>
+    <style>
+        p{margin: 3px;font-size: 20px;font-weight: bold;}
+    </style>
+
+</head>
+<body> 
+    <h3>오늘 점심은 뭘 먹었나요?</h3>
+    <input type="radio" class="vote"name="vote" value="0">한식<br>
+    <input type="radio" class="vote"name="vote" value="1">중식<br>
+    <input type="radio" class="vote"name="vote" value="2">일식<br>
+    <input type="radio" class="vote"name="vote" value="3">양식<br>
+    <p>한식<span></span><sum></sum></p>
+    <p>중식<span></span><sum></sum></p>
+    <p>일식<span></span><sum></sum></p>
+    <p>양식<span></span><sum></sum></p>
+    <script>
+        // $('.vote').click(function(){
+        //     let index=$(this).val();
+        //     $('p').eq(index).append('■');
+        // })
+        // $('input').click(function(event){
+        //     $('p').eq($(event.target).val()).append('■');
+        // })
+        // $('input').click(function(){
+        //     let index=$('[name=vote]:checked').val();
+        //     $('p').eq(index).append('■');
+        // })
+        $('input').click(function(e){
+            let index=$('.vote').index(this);
+            let res=$('p span').eq(index).text()+'■';
+            let count=Number($('p sum').eq(index).text())+1;
+            $('p span').eq(index).text(res);
+            $('p sum').eq(index).text(count);
+
+        })
+    </script>
+
+    <h3>오늘 점심은 뭘 먹었나요?</h3>
+    <p class="vote2">한식<sum></sum></p>
+    <p class="vote2">중식<sum></sum></p>
+    <p class="vote2">일식<sum></sum></p>
+    <p class="vote2">양식<sum></sum></p>
+    <script>
+        $('.vote2').click(function(){
+            $(this).append('<span>■</span>');
+            $(this).find('sum').text($(this).find('span').length);
+        });
+        $('')
+         
+   </script>
+
+</body>
+</html>

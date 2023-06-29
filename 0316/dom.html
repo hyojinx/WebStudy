@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .color{color: brown;}
+        .color2{color: blue;}
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>도시</h1>
+        <ul>
+            <li id="one" class="color">서울</li>
+            <li id="two" class="color">대구</li>
+            <li id="three" class="color">부산</li>
+            <li id="four">대전</li>
+        </ul>
+    </div>
+<script>
+    const ele = document.querySelector('#two');
+    console.log(ele,ele.parentNode);
+    ele.parentNode.className='color2';
+
+    const ele2 = document.querySelector('ul');
+    console.log(ele2);
+    console.log(ele2.firstElementChild, ele2.lastElementChild);
+    console.log(ele2.firstChild, ele2.lastChild);
+    ele2.firstElementChild.className='color2';
+    ele2.lastElementChild.className='color';
+
+    // 이 부분 복습 필요 내용이해 부족
+    // firstElementChild -> 서울에서   nextSibling -> text
+    // lastElementChild -> 대전에서   previousSibling -> text
+    // firstElementChild -> 서울에서   nextElementSibling -> text
+    // lastElementChild -> 대전에서   previousElementSibling -> text
+    console.log(ele2.firstElementChild.nextSibling,
+        ele2.lastElementChild.previousSibling);
+    console.log(ele2.firstElementChild.nextElementSibling,
+        ele2.lastElementChild.previousElementSibling);
+    ele2.firstElementChild.nextElementSibling.className='color2';
+    ele2.lastElementChild.previousElementSibling.className='color2';
+    
+
+    
+    ele3=document.querySelector('#one');
+    ele3=document.getElementById('one');
+    console.log(ele3);
+    console.dir(ele3);
+    console.log(ele3.nodeName,ele3.nodeType,ele3.nodeValue);
+
+
+    const textnode = ele3.firstChild;
+    console.dir(textnode);
+    console.log(textnode.nodeName, textnode.nodeType, textnode.nodeValue);
+    textnode.nodeValue='인천';
+    console.dir(textnode);
+    console.log(textnode.nodeName, textnode.nodeType, textnode.nodeValue);
+    
+    console.log(ele.textContent);
+    console.log(ele3.textContent);
+
+    ele3.textContent='서울';
+    console.log(ele3.textContent);
+    
+    // 잘 정상 작동 되는 것 
+    ele3.innerHTML += '<strong class="color">, 한국</strong>';
+    // 텍스트 그 자체로 들어가기에 잘 작동이 안됨(글자 그대로 나옴)
+    // ele3.innerText += '<strong class="color">, 한국</strong>';
+
+
+    // 요소를 생성 
+    const newEle = document.createElement('li');
+    // 텍스트 노드 생성
+    const newText = document.createTextNode('북경');
+    
+    // 텍스트 노드를 해당 요소의 자식으로 DOM트리 구조 상에 추가 
+    newEle.appendChild(newText);
+    // 해당 요소를 메인 DOM 트리 구조에 추가
+    document.querySelector('ul').appendChild(newEle);
+
+    // 위치를 서울보다 앞쪽으로 배치
+    const removeEle= document.getElementById('one');
+    document.querySelector('ul').insertBefore(newEle, removeEle);
+    // 3글자이기에 0,1,2 밖에 없음
+    newText.insertData(2,'중국');
+    // "서울, 한국" 이 지워짐 
+    document.querySelector('ul').removeChild(removeEle);
+</script>
+    <input type="text">
+<script>
+   const input=document.querySelector('input[type=text]');
+   console.log(input); 
+
+    // placeholder가 없으면 추가 있으면 생략
+    // input.setAttribute('placeholder', 'hell!');
+    if(!input.hasAttribute('placeholder'))
+    {
+        input.setAttribute('placeholder', 'hello!');
+    }
+    console.log(input.getAttribute('placeholder'));
+    // placeholder를 지우기
+    input.removeAttribute('placeholder');
+
+
+
+</script>
+
+</body>
+</html>

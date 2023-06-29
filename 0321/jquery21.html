@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="../0320/js/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <h2>Filter</h2>
+    <input id="in" type="text" placeholder="search">
+    <div id="test">
+        <p>this is a paragraph.</p>
+        <div>this is div element in div.</div>
+        <button>this is a button.</button>
+        <P>this is another paragraph.</P>
+    </div>
+    <script>
+        $(function(){
+            $('#in').keyup(function(){
+                let val=$(this).val().toLowerCase();
+                $('#test *').filter(function(){
+                    $(this).toggle(
+                        $(this).text().toLowerCase().indexOf(val)>-1
+                    )
+                });
+            });
+        }); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>CSS transform 3D</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        section{
+            width: 100px; height: 100px; background-color: whitesmoke;
+            margin: 50px; perspective: 150px;
+        }
+        div{
+            width: 100px; height: 100px; background-color: orange;
+            transition: 0.5s;
+        }
+        .box01{transform: rotate3d(50deg); perspective: none;}
+        .box02{transform: rotateX(50deg);perspective: 100px;}
+        .box03{transform: rotateX(50deg);perspective: 200px;}
+
+        .box04:hover{transform: rotateX(70deg);}
+        .box05:hover{transform: rotateY(70deg);}
+        .box06:hover{transform: rotateZ(70deg);}
+
+        .box07:hover{transform: translateX(-50px);}
+        .box08:hover{transform: translateY(-50px);}
+        .box09:hover{transform: translateZ(-50px);}
+
+        .box10:hover{transform: scaleX(1.5);}
+        .box11:hover{transform: scaleY(0.5);}
+        .box12:hover{transform: scaleZ(0.8);}
+
+        .box13:hover{transform: rotateX(180deg); transform-origin: center;}
+        .box14:hover{transform: rotateX(180deg); transform-origin: center top;}
+        .box15:hover{transform: rotateX(180deg); transform-origin: center bottom;}
+    </style>
+</head>
+<body>
+    <h3>rotate</h3>
+    <section >
+        <div class="box01">none</div>
+    </section>
+    <section>
+        <div  class="box02">100px</div>
+    </section>
+    <section >
+        <div class="box03">200px</div>
+    </section>
+    <section >
+        <div class="box04">x축회전</div>
+    </section>
+    <section >
+    <div class="box05">y축회전</div>
+    </section>
+    <section >
+        <div class="box06">z축회전</div>
+    </section>
+    <section >
+        <div class="box07">X축 이동</div>
+    </section>
+    <section >
+        <div class="box08">Y축 이동</div>
+    </section>
+    <section >
+        <div class="box09">z축 이동</div>
+    </section>
+    <section >
+        <div class="box10">X축 크기</div>
+    </section>
+    <section >
+        <div class="box11">Y축 크기</div>
+    </section>
+    <section >
+        <div class="box12">z축 크키</div>
+    </section>
+    <section >
+        <div class="box13">가운데</div>
+    </section>
+    <section >
+        <div class="box14">상단</div>
+    </section>
+    <section >
+        <div class="box15">하단</div>
+    </section>
+
+</body>
+</html>

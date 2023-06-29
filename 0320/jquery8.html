@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity=""></script>
+    <style>
+        div{border: 1px solid black;width: 50px;height: 50px;float: left;margin: 5px;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3<span>tags</span></li>
+    </ul>
+    <ul></ul>
+    <div>A</div>
+    <div class="mid">B</div>
+    <div class="mid not">C</div>
+    <div class="mid not">D</div>
+    <div class="mid">E</div>
+    <div>F</div>
+<script>
+    $('div').not('.not').css('color','red');
+    // $('li:nth-child(1)').css('color','red');
+    $('li').first().css('color','red');
+    $('li').last().css('color','orange');
+    $('li').eq(1).css('color','blue');
+    $('li').filter(':nth-child(2)').css('color','lightgreen');
+    $('li').filter(function(index){
+        return $(this).find('span').length===1;
+    }).css('color','yellow');
+    $('div').css('background','skyblue').filter('.mid').css('border','3px dotted blue');
+    $('ul:has(li)').addClass('inyes');
+    $('ul').has('li').addClass('yes');
+    $('ul').click(function(event){
+        let target=$(event.target);
+        if(target.is('li')){
+            target.css('background-color','red');
+        }
+    })
+</script>
+    <form>
+        <fieldset>
+            <label>이름:</label>
+            <input type="text" name="name" value=""/>
+            <label>암호:</label>
+            <input type="password" name="pw" value=""/>
+            <lable>이메일:</lable>
+            <input type="email" name="email" value=""/>
+        </fieldset>
+    </form>
+        <button type="button" id="print">출력</button>
+        <b>값출력:</b><p></p>
+    <script>
+        console.log($('input'));
+        let temp=$('input').map(function(index,ele){
+            console.log(index,ele);
+            return $(this).val();
+        });
+        console.log(temp,temp.get());
+        $('#print').click(()=>{
+
+            $('p').empty().append(
+                $('input').map(function(index,ele){
+                  return $(this).val();
+            }).get().join()
+            );
+        });
+        console.log($('div'));
+        $('div').slice(2,4).css('background-color','pink');
+        $('div').slice(-2,-1).css('background-color','gray');
+    </script>    
+</body>
+</html>

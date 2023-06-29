@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        //배열의 생성
+        let arr1=[1,"javaScript",true];
+        let arr2=Array(2,"javaScript",true);
+        let arr3 = new Array(3,"javaScript",true);
+        console.log(arr1,arr2,arr3);
+        console.log(arr1.length);
+        console.log(arr1[1]);
+        let arr4=[,,,];
+        console.log(arr4[1]);
+        arr4[10]="origin";
+        console.log(arr4);
+        let arrayOf=Array.of(1,"javascript",false);
+        let arrayFrom=Array.from(arrayOf);
+        console.log(arrayOf);  
+        console.log(arrayFrom);  
+
+        //배열의 추가
+        let arr5=[1,true,"javascript"];
+        arr5.push("java");
+        arr5[arr5.length]=50;
+        console.log(arr5);
+
+        //배열 함수
+        let res1=Array.isArray([]); 
+        let res2=Array.isArray([1,2]); 
+        let res3=Array.isArray(new Array());
+        console.log(res1,res2,res3);
+        res1=Array.isArray({});
+        res2=Array.isArray(null);
+        res3=Array.isArray('Array');
+        console.log(res1,res2,res3);
+        
+        let fruits=['banana','grape','peach','apple','strawberry'];
+        console.log(fruits instanceof Array);
+
+        console.log(fruits.indexOf('apple'));
+        console.log(fruits.indexOf('bang'));
+        console.log(fruits.indexOf('peach',2));
+        console.log(fruits.includes('orange'));
+
+        fruits.push('orange');
+        delete fruits[2];
+        console.log(fruits);
+        fruits.unshift('orange');
+        console.log(fruits);
+        let last = fruits.pop();
+        console.log(fruits,last);
+        let first = fruits.shift();
+        console.log(fruits,first);
+
+        let rsplice = fruits.splice(2,2,'orange');
+        console.log(fruits);
+        console.log(rsplice);
+        rsplice=fruits.splice(3,1);
+        console.log(fruits,rsplice);
+
+        let rslice = fruits.slice(0,3);
+        console.log(fruits,rslice);
+
+        let arr6=[1,2,3];
+        let arr7=[4,5,6];
+        let res =arr6.concat(arr7);
+        console.log(res);
+        res=arr7.concat(arr6);
+        console.log(res);
+        res=arr6.concat(arr7,arr1,7);
+        console.log(res);
+        console.log(arr6,arr7);
+
+        console.log('reverse',res.reverse);
+        console.log('sort',res.sort());
+
+        let flatArray=[['a','b','c'],['d',['e','f']]];
+        console.log(flatArray);
+        console.log(flatArray.flat());
+        console.log(flatArray.flat(2));
+        console.log(flatArray);
+
+        console.log(res.fill(0),res);
+        console.log(res.fill('num',1,3));
+        console.log(res.fill('string',2));
+        console.log(res);
+
+        let text = res.join();
+        console.log(text);
+        text=res.join('|');
+        console.log(text);
+
+        console.log('==================================');
+        //반복  
+        let arrIter = ['first','second','thrid','fourth'];
+        for(let i=0;i<arrIter.length;i++){
+            console.log('for',arrIter[i]);
+        }
+        for(let item in arrIter){
+            console.log('for in',arrIter[item]);
+        }
+        for(let item of arrIter){
+            console.log('for of',item);
+        }
+        arrIter.forEach(
+            function(item){
+                console.log('forEach',item);
+            }
+        );
+    </script>
+</body>
+</html>

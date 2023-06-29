@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 클래스 선택자</title>
+    <style> 
+      /*형제 요소 그룹 중 첫번째 요소를 선택*/
+      p:first-child{color: red;}
+      /*형제 요소 그룹 중 마지막 요소를 선택*/
+      p:last-child{color: blue;}
+      /*ol 자식 중에서 특정 자식 선택*/
+      ol>li:first-child{color: sienna;}
+      ol>li:last-child{color: plum;}
+      ol>li:nth-child(4){color: orange;}
+      ol>li:nth-child(2n){color: green;}
+      ol>li:nth-child(2n-1){color: blueviolet;}
+      
+      /*ul 자식 중에서 특정 자식 선택*/
+      ul>li:nth-child(2n){color: green;}
+      ul>li:nth-child(2n-1){color: blueviolet;}
+      ul>li:first-child{color: sienna;}
+      ul>li:last-child{color: plum;}
+      ul>li:nth-child(4){color: orange;}
+      ul>li:nth-last-child(4){color: black;}
+
+      #type p:first-of-type{color: yellow;}
+      #type p:last-of-type{color: burlywood;}
+      #type p:nth-of-type(2){color: chartreuse;}
+      #type p:nth-last-of-type(4){color: crimson;}
+      
+      article :first-of-type{color: pink;}
+
+      .onlychild div:only-child{color: darkred;}
+      .onlytype span:only-of-type{color: cyan;}
+      p:empty{width: 100px;height: 20px;background-color: red;}
+      /* :root{background-color: darkblue;} */
+    </style>
+</head>
+<body>
+    <p>body의 first child</p>
+    <p></p>
+    <h3>my list</h3>
+    <p>body의 child</p>
+    <div>
+        <p>div의 first child</p>
+        <p>div's second child</p>
+    </div>
+    <ol>
+        <li>에스프레소</li>
+        <ol>
+            <li>one shot</li>
+            <li>two shot</li>
+            <li>three shot</li>
+            <li>four shot</li>
+        </ol>
+        <li>아메리카노</li>
+        <li>카페라떼</li>
+        <li>마키아토</li>
+        <li>카푸치노</li>
+        <li>카라멜라떼</li>
+    </ol>
+    <ul>
+        <li>에스프레소</li>
+        <li>아메리카노</li>
+        <li>카페라떼</li>
+        <li>마키아토</li>
+        <li>카푸치노</li>
+        <li>카라멜라떼</li>
+    </ul>
+    <div id="type">
+        <h3>제목</h3>
+        <span>임의의 등장 span</span>
+        <p>첫문단</p>
+        <p>두번째 문단</p>
+        <p>세번째 문단</p>
+        <p>네번째 문단</p>
+        <div>
+            <h3>제목</h3>
+            <p>첫문단</p>
+            <p>두번째 문단</p>
+            <p>세번째 문단</p>
+            <p>네번째 문단</p>
+            <span>임의의 등장 span</span>
+        </div>
+    </div>
+    <article>
+        <div>first div</div>
+        <div>
+            이건<em>first em</em>입니다.
+            이건<em>second em</em>이구요.
+        </div>
+        <div>
+            이건<span>first span</span>입니다.
+            이건<span>second span</span>이구요.
+        </div>
+        <b>임의의 b태그</b>
+        <div>last div</div>
+    </article>
+    <div class="onlychild">
+        <div class="child2">
+            only child의 유일한 자식
+            <div>child2의 유일한 자식</div>
+        </div>
+    </div>
+    <div class="onlytype">
+        <span>only type</span>
+        <p>또 다른 자식</p>
+        <!-- <span>유일한 타입 아니야</span> -->
+    </div>
+    <p>난 마지막</p>
+</body>
+</html>

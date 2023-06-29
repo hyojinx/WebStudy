@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>global attr</title>
+    <style>
+        .wrapper{color: orange;}
+        .wrapper p{color: purple;}
+        p.one{color: inherit;}
+        p.two{color: initial;}
+        p.three{color: unset;}
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <p class="one">상속</p>
+        <p class="two">초기값</p>
+        <p class="three">상속하지 않음</p>
+        <p>비설정 상태</p>
+    </div>
+</body>
+</html>

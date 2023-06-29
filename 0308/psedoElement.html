@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소</title>
+    <style>
+        /*요소의 첫글자 선택*/
+        p::first-letter{font-size: 3em;}
+        /*요소의 첫줄 선택*/
+        p::first-line{color: red;}
+        /*요소의 앞공간 선택*/
+        h1::before{
+            content: "HTML||";
+            color: blue;
+        }
+        h1::after{
+            content: "CSS||"url("../0307/image/newjeans.png");
+            color: red; background-color:  green;
+        }
+        ::selection{
+            color: red;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>의사 요소</h1>
+    <P>
+        Baby, got me looking so crazy
+        빠져버리는 daydream
+        Got me feeling you 
+        너도 말해줄래
+        누가 내게 뭐라든 
+        남들과는 달라 넌
+        Maybe you could be the one
+
+    </P>
+    <div></div>
+</body>
+</html>

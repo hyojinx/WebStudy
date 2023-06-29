@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <button onclick="openFunc()">naver</button>
+    <script>
+        /* window 객체
+        alert() promot() confirm() open()
+        */
+        function openFunc(){
+            window.open('https://www.naver.com','_blank');
+        }
+        /*history 객체
+        back() forward()
+        */
+       /*location 객체
+       */
+      document.write("href:"+location.href,"<br>");
+      document.write("hostname:"+location.hostname,"<br>");
+      document.write("host:"+location.host,"<br>");
+      document.write("protocol:"+location.protocol,"<br>");
+      document.write("search:"+location.search,"<br>");
+    //   location.reload();
+
+    /* navigator 객체 브라우저 정보 운영체제의 정보
+    */
+   document.write("appCodeName:"+navigator.appCodeName,"<br>")
+   document.write("appName:"+navigator.appName,"<br>")
+   document.write("appVersion:"+navigator.appVersion,"<br>")
+   document.write("language:"+navigator.language,"<br>")
+   document.write("product:"+navigator.product,"<br>")
+   document.write("platform:"+navigator.platform,"<br>")
+   document.write("userAgent:"+navigator.userAgent,"<br>")
+   /* screen 객체 사용자의 모니터 정보
+   */
+  document.write("width:"+screen.width,"<br>");
+  document.write("height:"+screen.height,"<br>");
+  document.write("availWidth:"+screen.availWidth,"<br>");
+  document.write("availHeight:"+screen.availHeight,"<br>");
+  document.write("colorDepth:"+screen.colorDepth,"<br>");
+  
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        //객체 생성
+        let person={
+            name:'홍길동',
+            birthday:'20220308',
+            pId:'12123568',
+            fullId:function(){
+                return this.birthday.slice(2)+'-'+this.pId;
+            }
+        }
+        console.log(person,name);
+        console.log(person['name']);
+        console.log(person.fullId);
+        console.log(person.fullId());
+        //빈 객체 생성
+        let person2=new Object();
+        console.log(person2);
+        person2.name='임꺽정';
+        person2.gender='남자';
+        person2.intro=function(){
+            console.log('나는 '+this.name+'.나는 '+this.gender+'다');
+        }
+        console.log(person2);
+        person2.intro();
+
+        //생성자 함수
+        function Person(name,gender){
+            this.name=name;
+            this.gender=gender;
+            this.intro=function(){
+                console.log('나는 '+this.name+'.나는 '+this.gender+'다.');
+            }
+        }
+        let person3 = new Person('김혜수','여자');
+        console.log(person3);
+        person3.intro();
+        console.log(typeof person3);
+        console.log(person3 instanceof Person);
+    
+    </script>
+</body>
+</html>

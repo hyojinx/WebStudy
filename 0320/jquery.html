@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+
+    <!-- 다운로드 해서 하는 방식 -->
+    <!-- <script src="js/jquery-3.6.4.js"></script> -->
+    
+    <!-- CDN으로 링크해서 하는 방식 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    
+    <style>
+        div{width: 50px; height: 40px; margin: 5px; float: left;
+            border: 3px outset green;}
+        .starthidden{display: none;}
+    </style>
+    <script>
+        window.onload=function()
+        {
+            console.log('javascript');
+        }
+        
+        // $(document).ready(function(){
+        $(function(){
+            // console.log('script');
+            console.log('jquery')
+            $("div:visible").click(function(){
+                $(this).css("background", "yellow");
+            })                
+            $('button').click(function(){
+                $("div:hidden").show('fast');
+            })                
+        });
+    </script>
+</head>
+<body>
+    <button>show hidden</button>
+    <div></div>
+    <div class="starthidden"></div>
+    <div></div>
+    <div></div>
+    <div style="display: none;"></div>
+
+
+</body>
+</html>

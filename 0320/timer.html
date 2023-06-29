@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <script>
+        //setTimeout(cbf(),time) setInterval(cbf(),time)
+        const timeoutId = setTimeout(()=>{
+            console.log('setTimeout 2sec');
+        },2000);
+        const intervalId = setInterval(() => {
+           console.log('print per 3sec'); 
+        },3000);
+        clearTimeout(timeoutId);
+        clearInterval(intervalId);
+        const func=function(){
+            console.log('wow');
+        }
+        func();
+        console.log(func);
+        setTimeout(func,0);
+        setTimeout(e=>func(e),0);
+        setTimeout(()=>console.log('hello'),0);
+        console.log('world'); 
+
+        //json(JavaScript Object Notation)
+        /*
+            {
+                "key":"value",
+                "arr":[1,2,3],
+                "nullprop":null
+            }
+        */
+       let js = JSON.stringify({
+                "key":"value",
+                "arr":[1,2,3],
+                "nullprop":null
+            });
+        console.log(js);
+        let jp=JSON.parse(js);
+        console.log(jp);
+    </script>
+</body>
+</html>

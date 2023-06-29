@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록</title>
+    <style>
+        ul{background-color: orange; padding: 15px;}
+        ul li{background-color: blanchedalmond;margin: 5px;}
+        .inside{
+            list-style-type: square;
+            list-style-position: inside;
+        }
+        .outside{
+            list-style: outside circle;
+            line-height: 1.5;
+        }
+        .insideImg{
+            list-style-position: inside;
+            list-style-image: url(images/kkoimage.png);
+        }
+    </style>
+</head>
+<body>
+    <h3>리스트의 스타일 설정</h3>
+    <ul class="inside">
+        <li>아이템1-1</li>
+        <li>아이템1-2</li>
+        <li>아이템1-3</li>
+        <li>아이템1-4</li>
+    </ul>
+    <ul class="outside">
+        <li>아이템2-1</li>
+        <li>아이템2-2</li>
+        <li>아이템2-3</li>
+        <li>아이템2-4</li>
+    </ul>
+    <ul class="insideImg">
+        <li>아이템3-1</li>
+        <li>아이템3-2</li>
+        <li>아이템3-3</li>
+        <li>아이템3-4</li>
+    </ul>
+    <ul class="noOrder">
+        <li>아이템4-1</li>
+        <li>아이템4-2</li>
+        <li>아이템4-3</li>
+        <li>아이템4-4</li>
+    </ul>
+</body>
+</html>

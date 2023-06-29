@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parameter</title>
+</head>
+<body>
+    <script>
+        //매개변수 기본값
+        function sum(x,y){
+            console.log(x,y);
+            console.log(arguments);
+            return x+y;
+        }
+        console.log(sum(3,4));
+        console.log(sum(1));
+        //나머지 매개변수
+        function restParameter(p1,p2,...rest){
+            console.log(arguments);
+            console.log(rest);
+            console.log(Array.isArray(rest));
+        }
+        restParameter(1,2,3,4,5,6,7,8,9,10,11);
+        console.log([...'hello']);//spread연산자
+        const nums = [1,2,3,4,5];
+        console.log(...nums);
+        restParameter(...nums);
+    </script>
+</body>
+</html>

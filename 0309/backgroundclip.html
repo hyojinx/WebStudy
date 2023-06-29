@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS background clip</title>
+    <style>
+        div{
+            box-sizing: border-box;
+            width: 100%;margin: 20px 0px;
+            padding: 20px;border: 10px dotted whitesmoke;
+            background-color: lightgrey;
+        }
+        .a{background-clip: border-box;}
+        .b{background-clip: padding-box;}
+        .c{background-clip: content-box;}
+    </style>
+</head>
+<body>
+    <p>border-box</p>
+    <div class="a">우리집 앞산</div>
+    <P>padding box</P>
+    <div class="b">우리집 뒷산</div>
+    <p>content box</p>
+    <div class="c">우리집 옆산</div>
+</body>
+</html>

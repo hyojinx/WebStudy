@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAD2</title>
+</head>
+<body>
+    <div>
+        <p id="drag1" draggable="true">드래그해보세요</p>
+        <br>
+        <div id="drop1">여기에 드롭하세요</div>
+    </div>
+    <div>
+        <div id="drop2">여기에 파일을 드롭하세요.</div>
+    </div>
+    <script>
+        document.getElementById('drag1').ondragstart=function(e){
+            console.log('drag start');
+            e.dataTransfer.setData('data',this.innerHTML);
+            e.dataTransfer.dropEffect='copy';
+        }
+        let drop1=document.getElementById('drop1');
+        drop1.ondragover=e=>{
+            e.preventDefault();
+            console.log('dragover');
+            e.dataTransfer.dropEffect='move';
+        };
+        drop1.ondrop=e=>{
+            console.log('drop');
+            alert(e.dataTransfer.getData('data'));
+        }
+        let drop2=document.getElementById('drop2');
+        drop2.ondragover=e=>e.preventDefault();
+        drop2.ondrop=e=>{
+            e.preventDefault();
+            let data=e.dataTransfer;
+            console.log(data.items);
+            if(data.items){
+                for(let i=0;i<data.items.length;i++){
+                    if(data.items[i].kind=='file'){
+                        let file=data.items[i].getAsFile();
+                        alert(file.name);
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<body>
+    <script>
+        let set =new Set();
+        let hong={name:'홍길동'};
+        let you = {name:'유관순'};
+        let lee={name:'이순신'};
+        let go={name:'고길동'};
+        set.add(hong);
+        set.add(go);
+        set.add(lee);
+        set.add(you);
+        set.add(lee);
+        set.add(go);
+        console.log(set,set.size);
+        for(let hero of set){
+            console.log(hero.name);
+        }
+    </script>
+</body>
+</html>

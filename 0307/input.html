@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    <form name="form1"action="#" method="get">
+        <fieldset>
+            <legend>text input</legend>
+            <input type="text" name="text1" placeholder="한줄 입력"><br>
+            <input type="text" name="text1" value="기본값" readonly><br>
+            <input type="password" name="pw" placeholder="암호입력" maxlength="6"><br>
+            <textarea name="message" rows="5" cols="35" placeholder="여러줄 입력"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>select</legend>
+            <label>radio button--</label><br>
+            <input type="radio" name="lectur" value="html">HTML<br>
+            <input type="radio" name="lectur" value="css" checked>CSS<br>
+            <input type="radio" name="lectur" value="java">Java<br>
+            <input type="radio" name="lectur" value="script">JavaScript<br>
+
+            <label>check box--</label><br>
+            <input type="checkbox" name="lectur1" value="html">HTML<br>
+            <input type="checkbox" name="lectur1" value="css" checked>CSS<br>
+            <input type="checkbox" name="lectur1" value="java">Java<br>
+            <input type="checkbox" name="lectur1" value="script">JavaScript<br>
+
+            <label>drop down list</label><br>
+            <select name="fruit">
+            <option value="apple">사과</option>
+            <option value="orange">오렌지</option>
+            <option value="strewBerry">딸기</option>
+            <option value="peach">딸기</option>
+
+            </select>
+            <br>
+            <input list="fruits" name="fruit2">
+            <datalist id = "fruits">
+                <option value="apple">사과</option>
+                <option value="orange">오렌지</option>
+                <option value="strewBerry">딸기</option>
+                <option value="peach">딸기</option>
+            </datalist>
+        </fieldset>
+        <button type="submit">전송</button>
+        <input type="submit" value="전송">
+        <input type="reset">
+    </form>
+    <form action="#" name="fileform" method="get" enctype="multipart/form-data">
+        <fieldset>
+            <legend>file</legend>
+            <input type="file" name="upload" accept=".pptx,image/*" multiple>
+            <!--image/* audio/* video/*-->
+        </fieldset>
+        <button type="submit">전송</button>
+    </form>
+    <form name="formEtc" action="#" method="get">
+        <input type="color" id="fav" name="fav" class="fav" placeholder="컬러픽커"><br>
+        <input type="date" name="dday" placeholder="날짜" min="2002-01-01" max="2023-01-01"><br>
+        <input type="month" name="dmonth" placeholder="날짜 월"><br>
+        <input type="time" name="dtime" placeholder="시간"><br>
+        <input type="week" name="dweek" placeholder="주" disabled><br>
+        <input type="email" name="email" placeholder="이메일 형식체크"><br>
+        <input type="search" name="search" placeholder="검색"><br>
+        <input type="tel" name="telnum" placeholder="***-****-****" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"><br>
+        <input type="url" name="page" placeholder="url 주소"><br>
+        <input type="number" name="num" placeholder="숫자입력" min="1" max="20" step="2" required><br>
+        <input type="image" src="image/newjeans.png" alt="대체" width="48" height="48"><br>
+        <!--제일 중요하다는데요? hidden-->
+        <input type="hidden" name="id" value="1234" placeholder="숨겨진 값"><br>
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>

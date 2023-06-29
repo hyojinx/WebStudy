@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS userInterface</title>
+    <style>
+        .resize{border: solid 3px orange;margin: 10px;
+        padding: 20px;width: 300px;overflow: auto;
+        outline: 1px solid red;outline-offset: 20px;
+    }
+    #width{resize: horizontal;}
+    #height{resize: vertical;}
+    #both{resize: both;}
+
+    .box{width: 350px;height: 100px;margin: 10px;}
+    #orgin{border: 1px solid orange;}
+    #padding{border: 10px solid green; padding: 20px;}
+    #boxsizing{border: 10px solid green; padding: 20px;
+                box-sizing: border-box;}
+    </style>
+</head>
+<body>
+    <div id="width" class="resize">너비조절</div>
+    <div id="height"class="resize">높이조절</div>
+    <div id="both" class="resize">모두조절</div>
+    <div id="orgin" class="box">기본</div>
+    <div id="padding" class="box">패딩값</div>
+    <div id="boxsizing" class="box">박스사이즈를 통한 크기조절</div>
+</body>
+</html>

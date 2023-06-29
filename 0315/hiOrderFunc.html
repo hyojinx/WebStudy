@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고차함수</title>
+</head>
+<body>
+    <script>
+        const fruits=['orange','apple','banana','grape'];
+        fruits.sort();
+        console.log(fruits);
+        fruits.reverse();
+        console.log(fruits);
+        // js는 sort가 문자열 중심으로 sort를 이룸 
+        const points =[50,40,30,10,100,70,10,1,4,5];
+        points.sort();
+        console.log(points);
+        //숫자값으로 정렬을 하고 싶을때
+        points.sort(function(a,b){
+            return b-a;
+        })
+        console.log(points);
+        
+        //for문 이용
+        const numbers=[1,2,3,4];
+        let pows =[];
+        // for(let i=0; i<numbers.length;i++){
+        //     pows[i] = numbers[i]*numbers[i];
+        // }
+        // console.log(pows);
+        
+        for(let i=0;i<numbers.length;i++){
+            pows.push(numbers[i]**2);
+        }
+        console.log(pows);
+        pows= [];
+       
+       //
+       for(let num of numbers){
+        pows.push(num**2);
+       }
+       console.log(pows);
+       
+           //    numbers.forEach(
+    //     function(item){
+    //         item-=1;
+    //         pows[item] = numbers[item]*numbers[item];
+    //     }
+    //    )
+    pows=[];
+    numbers.forEach(function(item,index,self){
+        console.log('numbers['+index+']='+item);
+        console.log(self);
+        pows.push(item**2);
+    })
+    console.log(pows);
+    pows=[];
+    pows=numbers.map(function(item){
+        return item**2;
+    });
+    console.log(pows);
+
+    let roots=pows.map(function(item){
+        return Math.sqrt(item);
+    });
+    console.log(roots);
+    let filterRes = [1,2,3,4,5,6,7].filter(function(item){
+        return item%2!=0;
+    });
+    console.log(filterRes)
+
+    let sum=[1,2,3,4,5,6,7,8,9,10].reduce(function(preval,curval){
+        console.log(preval,curval);
+        return preval+curval;
+    });
+    console.log(sum);
+
+    let some=[12,5,8,1,4].some(function(item){
+        return item>10;
+    });
+    console.log(some);
+
+    let every = [21,16,88,11,55].every(function(item){
+        return item>10
+    });
+    console.log(every);
+
+    let find=[1,'me','you','we'].find(function(item){
+        return item=='1';
+    });
+    console.log(find);
+    let find2=[1,'me','you','we'].findIndex(function(item){
+        return item==='1';
+    });
+    console.log(find2);
+
+    let users=[
+        {name:'lee',gender:'male'},
+        {name:'koo',gender:'male'},
+        {name:'choi',gender:'female'},
+    ];
+    function check(key,val){
+        return function(item){
+            return item[key]===val;
+        }
+    }
+    let index = users.findIndex(check('name','choi'));
+    console.log(index);
+    </script>
+</body>
+</html>

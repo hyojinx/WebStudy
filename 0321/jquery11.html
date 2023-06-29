@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <style>
+        .siblings *{
+            display: block;border: 2px solid lightgray;
+            color: lightgrey;padding: 5px;margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="siblings">
+        <div>div(parent)
+            <p>p</p>
+            <span>span</span>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+            <p>p</p>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            console.log($('h2').siblings());
+            // $('h2').siblings().css({'color':'red','border':'2px solid red'});   형제 전체 선택
+            // $('h2').next().css({'color':'blue','border':'2px solid blue'});     //h2 다음
+            // $('h2').nextAll().css({'color':'green','border':'2px solid green'});     //h2다음 전체
+            // $('h2').nextUntil('h6').css({'color':'violet','border':'2px solid violet'});  //범위 설정 가능,설정 안하면 끝까지
+            $('h6').prev().css({'color':'blue','border':'2px solid blue'});         //h6 앞에
+            $('h6').prevAll().css({'color':'green','border':'2px solid green'});         //h6 앞에 전부
+            $('h6').prevUntil('h2').css({'color':'violet','border':'2px solid violet'});  //범위 설정 가능,설정 안하면 끝까지
+
+        })
+    </script>
+</body>
+</html>

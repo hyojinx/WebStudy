@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object</title>
+</head>
+<body>
+    <strong id="message"></strong>
+    <div class="container">
+        <button id="btn1">숨기기1</button>
+        <button id="btn2">숨기기2</button>
+    </div>
+    <a href="http://www.naver.com">네이버</a>
+    <form>
+        <label for="chkbox">체크박스</label>
+        <input type="checkbox" id="chkbox">
+    </form>
+    <script>
+        const link=document.querySelector('a');
+        link.addEventListener('click',function(event){
+            console.log('click event',event);
+            console.log(event.cancelable);
+            event.preventDefault();
+        });
+        const chkbox=document.querySelector('#chkbox');
+        chkbox.addEventListener('click',function(e){
+            msg.innerHTML+='<code>prevebtDefault()</code><br>';
+            e.preventDefault();
+        });
+        const msg = document.querySelector('#message');
+        const body = document.querySelector('body');
+        function showType(e){
+            console.log(e);
+            e.preventDefault();
+            msg.innerHTML=e.type+':'+e.keyCode;
+        }
+        body.addEventListener('keydown',showType);
+        body.addEventListener('keyup',showType);
+
+        const container =document.querySelector('.container');
+        function hide(e){
+            console.log(e);
+            e.target.style.visibility='hidden';
+            console.log(this);
+            console.log(e.target);
+            console.log(e.currentTarget);
+            console.log(e.type);
+        }
+        container.addEventListener('click',hide);
+
+        function printCoord(e,out){
+            console.log(e);
+            out.innerHTML='x:'+e.clientX+' y'+e.clientY;
+        }
+        addEventListener('click',function(e){
+            printCoord(e,msg);
+        });
+    </script>
+</body>
+</html>

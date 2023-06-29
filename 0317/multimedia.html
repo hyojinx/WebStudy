@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티미디어</title>
+</head>
+<body>
+    <h1>video</h1>
+    <video controls loop style="width:500px; height:360px;"
+        poster="../0307/image/cat.png">
+        <source src="./media/Waves.mp4" type="video/mp4">
+        <source src="./media/Rain.mp4" type="video/mp4">
+        <track src="#" kind="subtitles" srclang="ko" label="한국어">
+        <track src="#" kind="subtitles" srclang="en" label="English">
+        이 브라우저는 video요소를 지원하지 않습니다.
+    </video>
+    <h1>audio</h1>
+    <audio controls loop autoplay>
+        <source src="./media/forest-lullaby.mp3" type="audio/mp3"
+            preload="auto">
+        <source src="./media/leonell-cassio-chapter-two.mp3" type="audio/mp3">
+        이 브라우저는 audio 요소를 지원하지 않습니다.
+    </audio>
+    <br>
+    <object data="./media/PDFsample.pdf">미지원</object><br>
+    <object data="../0307/image/cat.png" width="200px" 
+        height="100px">미지원</object><br>
+    <object data="../0316/event.html">미지원</object><br>
+    <embed src="./media/PDFsample.pdf"><br>
+    <embed src="../0307/image/cat.png" width="200px" height="100px">
+        <br>
+    <embed src="../0316/event.html" 
+        style="width:1000px;height:300px;"><br>
+</body>
+</html>

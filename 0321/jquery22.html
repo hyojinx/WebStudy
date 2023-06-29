@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="../0320/js/jquery-3.6.4.js"></script>
+    <script>
+        j=$.noConflict();
+        j(document).ready(function(){
+            j('button').click(function(){
+                j('p').text('jquery동작');
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <p>기본 문장</p>
+    <button>jquery 동작</button>
+</body>
+</html>

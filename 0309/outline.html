@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS box model outline</title>
+    <style>
+        p{
+            background-color: lightgreen;
+            border: 3px solid black;
+            padding: 10px; margin: 40px;
+            outline-width: 10px;
+            outline-color: red;
+            outline-offset: 5px;   
+        }
+        .dotted{outline-style: dotted;}
+        .dashed{outline-style: dashed;}
+        .solid{outline-style: solid;}
+        .double{outline-style: double;}
+        .groove{outline-style: groove;}
+        .ridge{outline-style: ridge;}
+        .inset{outline-style: inset;}
+        .outset{outline-style: outset;}
+        .none{outline-style: none;}
+        .hidden{outline-style: hidden;}
+
+        </style>
+</head>
+<body>
+    <p class="dotted">dotted</p>
+    <p class="dashed">dashed</p>
+    <p class="solid">solid</p>
+    <p class="double">double</p>
+    <p class="groove">groove</p>
+    <p class="ridge">ridge</p>
+    <p class="inset">inset</p>
+    <p class="outset">outset</p>
+    <p class="none">none</p>
+    <p class="hidden">hidden</p>
+</body>
+</html>

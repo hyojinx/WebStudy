@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+        #inst{
+            width: 100px;height: 50px;
+            background-color: red;margin-bottom: 10px;
+            transition-property: width,background-color;
+            transition-duration: 2s,2s;
+        }
+        #inst:hover{width: 300px;background-color: blue;}
+        div{
+            font: bold 15px "Open Sans";
+            color: white;
+            text-align: center;
+            width: 100px; height: 50px;
+            background-color: red;
+            margin-bottom: 10px;
+            transition: width 3s;
+        }
+        .t{transition-timing-function: ease;}
+        .t{transition-timing-function: linear;}
+        .t{transition-timing-function: ease-in;}
+        .t{transition-timing-function: ease-out;}
+        .t{transition-timing-function: ease-in-out;}
+        .timing:hover{width: 300px;}
+        .d1{transition-delay: 0s;}
+        .d2{transition-delay: 1s;}
+        .d3{transition-delay: 3s;}
+        .delay:hover{width: 300px;}
+        </style>
+</head>
+<body>
+    <div id="inst"></div>
+    <h3>transition timing function</h3>
+    <div class="timing t1">ease</div>
+    <div class="timing t2">linear</div>
+    <div class="timing t3">ease-in</div>
+    <div class="timing t4">ease-out</div>
+    <div class="timing t5">ease-in-out</div>
+    <h3>transition delay</h3>
+    <div class="delay d1">0s</div>
+    <div class="delay d2">1s</div>
+    <div class="delay d3">3s</div>
+</body>
+</html>

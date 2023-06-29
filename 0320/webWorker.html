@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker</title>
+</head>
+<body>
+    <p>
+        Find a number<br>
+        <output id="result">0</output>
+    </p>
+    <div class="btngrp">
+        <button onclick="startWorker();">START</button>
+        <button onclick="stopWorker();">STOP</button>
+    </div>
+    <script>
+        let webworker;
+        function startWorker()
+        {
+            if(typeof(Worker)!=="undefined")
+            {
+                if(typeof(webworker)=="undefined")
+                {
+                    webworker=new Worker("./js/worker.js");
+                }
+                webworker.onmessage=function(event)
+                {
+                    console.log(event);
+                    document.getElementById('result').innerHTML= event.data;
+                };
+            }
+        }
+
+        function stopWorker()
+        {
+            if(typeof(Worker)!=="undefined")
+            {
+                webworker.terminate();
+                webworker=undefined;
+            }
+            document.getElementById('result').innerHTML='0';
+        }
+    </script>
+
+</body>
+</html>

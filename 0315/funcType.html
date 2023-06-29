@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function type</title>
+</head>
+<body>
+    <script>
+        //죽시 실행 함수(Immediatly Invoke Function Expression   -   a.k.a(IIFE))
+        (function (){
+            let a=1,b=3;
+            document.write(a*b);
+        }());
+        //내부 함수
+        function parent(param){
+            let parentVal=param;
+            function children(){
+                let childVal='hong';
+                console.log(parentVal,childVal);
+                document.write(parentVal+childVal);
+            }
+            children();
+        }
+        parent('hello.');
+        //재귀함수
+        function factorial(n){
+            if(n<2)return 1;
+            return factorial(n-1)*n;
+        }    
+        console.log(factorial(6));
+    </script>
+    <button id="btn">버튼 클릭</button>
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click',function(){
+            window.alert('버튼을 눌렀어요.');
+            doSomething();
+        })
+        function doSomething(){
+            let name='강';
+            setTimeout(function(){
+                window.alert('내 성은 '+name+'입니다');
+            },1000);
+        }
+    </script>
+</body>
+</html>
